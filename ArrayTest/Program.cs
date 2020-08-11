@@ -28,6 +28,12 @@ namespace ArrayTest
             Console.WriteLine("Your goal is to practice slowly until the code you desire to learn is mastered.");
             Console.WriteLine();
         }
+
+
+        /// <summary>
+        /// /////////////////////////////Menus///////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <returns></returns>
         private static bool MainMenu()
         {
 
@@ -134,7 +140,7 @@ namespace ArrayTest
             Console.WriteLine("2. Sort");
             Console.WriteLine("3. Reverse");
             Console.WriteLine("4. Contains");
-            Console.WriteLine("5. indexOf");
+            Console.WriteLine("5. IndexOf");
             Console.WriteLine("6. List Menu");
             Console.WriteLine("7. Main Menu");
 
@@ -159,10 +165,10 @@ namespace ArrayTest
                     IndexOf();
                     return true;
                 case "6":
-                    MainMenu();
+                    ListMenu();
                     return true;
                 case "7":
-                    ListPractice();
+                    MainMenu();
                     return true;
                 default:
                     return true;
@@ -171,10 +177,54 @@ namespace ArrayTest
             }
         }
 
+        private static bool ListEdit()
+        {
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1. Add");
+            Console.WriteLine("2. Insert");
+            Console.WriteLine("3. Remove");
+            Console.WriteLine("4. RemoveAt");
+            Console.WriteLine("5. List Menu");
+            Console.WriteLine("6. Main Menu");
+
+
+            Console.Write("\r\nSelect an option: ");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Add();
+                    return true;
+                case "2":
+                    Insert();
+                    return true;
+                case "3":
+                    Remove();
+                    return true;
+                case "4":
+                    RemoveAt();
+                    return true;
+                case "5":
+                    ListMenu();
+                    return true;
+                case "6":
+                    MainMenu();
+                    return true;
+                default:
+                    return true;
+
+
+            }
+        }
+
+        /// <summary>
+        /// ///////////////////////////////////Responces///////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <returns></returns>
         public static string Wrong()
         {
             var wrong = new Random();
-            List<string> list = new List<string> { "*********************OPPS************************" };
+            List<string> list = new List<string> { "*******************************************OPPS******************************************" };
             int index = wrong.Next(list.Count);
             return list[wrong.Next(list.Count)];
 
@@ -187,7 +237,9 @@ namespace ArrayTest
             return list[random.Next(list.Count)];
         }
 
-
+        /// <summary>
+        /// //////////////////////////////////////Practice///////////////////////////////////////////////////////////////////////////
+        /// </summary>
         public static void forLoop()
         {
             var answer1 = "for (int i = 0; i < 5; i++) {}";
@@ -897,8 +949,6 @@ namespace ArrayTest
             Console.WriteLine("Congragulations completing the 'switch' statement practice. Would you like to practice something else?");
             MainMenu();
         }
-
-
 
         public static void List()
         {
@@ -1717,15 +1767,12 @@ namespace ArrayTest
             Console.WriteLine("What would you like to practice next?");
             ListControlOptions();
 
-
-
-
         }
         public static void Sort()
         {
 
             Console.Clear();
-            Console.WriteLine("\n**NOTE** If you don't know your 'for loop' and the Count prperty above, \nyou will need to know them before using this tool." +
+            Console.WriteLine("\n**NOTE** If you don't know your 'FOR loop' and the Count property above, \nyou will need to know them before using this tool." +
             "\n\nExamine this List: \n\nList<int> myNumbers = new List<int>(){ 21, 45, 63, 78, 100, 5, 46, 98, 42, 67 };\n\n" +
             "How do we sort this list from least to greatest or it was a string, in alphabetical order?" +
             "\nWe use the 'Sort' property." +
@@ -1733,7 +1780,7 @@ namespace ArrayTest
             Console.ReadKey();
             Console.Clear();
             Console.WriteLine("" +
-            "\n1. We call on the List Name and the Sort prperty:\n\t\t myNumbers.Sort" +
+            "\n1. We call on the List Name and the Sort property:\n\t\t myNumbers.Sort" +
             "\n2. We need a 'for loop' " +
             "\n3. Then we use the 'Count' property in the 'conditional' so that all of the numbers on the List are examined:\n\t\ti < numbers.Count;" +
             "\n4. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(numbers[i]);" +
@@ -1772,40 +1819,40 @@ namespace ArrayTest
                         {
                             guess = Console.ReadLine();
                             if (guess == answer38)
-                            { 
-                                    guess = Console.ReadLine();
+                            {
+                                guess = Console.ReadLine();
                                 if (guess == answer39)
-                                {     
+                                {
                                     //guess = Console.ReadLine();
-                                            Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n5\n21\n42\n45\n46\n63\n67\n78\n98\n100");
-                                            Console.WriteLine($"_________________________________________________________________________________________");
-                                            Console.WriteLine("\n\n Press Enter to continue...");
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n5\n21\n42\n45\n46\n63\n67\n78\n98\n100");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
                                 }
                                 else
                                 {
-                                    Wrong();
+                                    Console.WriteLine($"\n{Wrong()}\n");
                                 }
                             }
                             else
                             {
-                                Wrong();
+                                Console.WriteLine($"\n{Wrong()}\n");
                             }
 
                         }
                         else
                         {
-                            Wrong();
+                            Console.WriteLine($"\n{Wrong()}\n");
                         }
 
                     }
                     else
                     {
-                        Wrong();
+                        Console.WriteLine($"\n{Wrong()}\n");
                     }
-                }   
+                }
                 else
                 {
-                    Wrong();
+                    Console.WriteLine($"\n{Wrong()}\n");
                 }
 
             } while (answer35 != guess && answer36 != guess && answer37 != guess && answer38 != guess && answer39 != guess);
@@ -1856,29 +1903,29 @@ namespace ArrayTest
                                 }
                                 else
                                 {
-                                    Wrong();
+                                    Console.WriteLine($"\n{Wrong()}\n");
                                 }
                             }
                             else
                             {
-                                Wrong();
+                                Console.WriteLine($"\n{Wrong()}\n");
                             }
 
                         }
                         else
                         {
-                            Wrong();
+                            Console.WriteLine($"\n{Wrong()}\n");
                         }
 
                     }
                     else
                     {
-                        Wrong();
+                        Console.WriteLine($"\n{Wrong()}\n");
                     }
                 }
                 else
                 {
-                    Wrong();
+                    Console.WriteLine($"\n{Wrong()}\n");
                 }
 
             } while (answer40 != guess && answer41 != guess && answer42 != guess && answer43 != guess && answer44 != guess);
@@ -1930,41 +1977,37 @@ namespace ArrayTest
                                 }
                                 else
                                 {
-                                    Wrong();
+                                    Console.WriteLine($"\n{Wrong()}\n");
                                 }
                             }
                             else
                             {
-                                Wrong();
+                                Console.WriteLine($"\n{Wrong()}\n");
                             }
 
                         }
                         else
                         {
-                            Wrong();
+                            Console.WriteLine($"\n{Wrong()}\n");
                         }
 
                     }
                     else
                     {
-                        Wrong();
+                        Console.WriteLine($"\n{Wrong()}\n");
                     }
                 }
                 else
                 {
-                    Wrong();
+                    Console.WriteLine($"\n{Wrong()}\n");
                 }
 
             } while (answer45 != guess && answer46 != guess && answer47 != guess && answer48 != guess && answer49 != guess);
-
-
-
 
             Console.ReadKey();
             Console.Clear();
             Console.WriteLine("\n_______NO___EXAMPLE___THIS___TIME______HUAHAHAHA___HAHHAHAHA__(Echoing...Echoing...Use your imagination.)_____");
 
-               
             var answer50 = "myDouble.Sort();";
             var answer51 = "for (int i = 0; i < myDouble.Count; i++)";
             var answer52 = "{";
@@ -2000,29 +2043,29 @@ namespace ArrayTest
                                 }
                                 else
                                 {
-                                    Wrong();
+                                    Console.WriteLine($"\n{Wrong()}\n");
                                 }
                             }
                             else
                             {
-                                Wrong();
+                                Console.WriteLine($"\n{Wrong()}\n");
                             }
 
                         }
                         else
                         {
-                            Wrong();
+                            Console.WriteLine($"\n{Wrong()}\n");
                         }
 
                     }
                     else
                     {
-                        Wrong();
+                        Console.WriteLine($"\n{Wrong()}\n");
                     }
                 }
                 else
                 {
-                    Wrong();
+                    Console.WriteLine($"\n{Wrong()}\n");
                 }
 
             } while (answer50 != guess && answer51 != guess && answer52 != guess && answer53 != guess && answer54 != guess);
@@ -2063,86 +2106,1192 @@ namespace ArrayTest
                                 if (guess == answer59)
                                 {
                                     //guess = Console.ReadLine();
-                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read:\n12.34\n34.56\n45.67\n56.78\n89.12\n91.23");
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read:\na\nbold\ncoder\ndelivers\nevery\nforth\ngigabyte\nhowever\nit\njust\nkeeps\nLists");
                                     Console.WriteLine($"_________________________________________________________________________________________");
                                     Console.WriteLine("\n\n Press Enter to continue...");
                                 }
                                 else
                                 {
-                                    Wrong();
+                                    Console.WriteLine($"\n{Wrong()}\n");
                                 }
                             }
                             else
                             {
-                                Wrong();
+                                Console.WriteLine($"\n{Wrong()}\n");
                             }
 
                         }
                         else
                         {
-                            Wrong();
+                            Console.WriteLine($"\n{Wrong()}\n");
                         }
 
                     }
                     else
                     {
-                        Wrong();
+                        Console.WriteLine($"\n{Wrong()}\n");
                     }
                 }
                 else
                 {
-                    Wrong();
+                    Console.WriteLine($"\n{Wrong()}\n");
                 }
 
             } while (answer55 != guess && answer56 != guess && answer57 != guess && answer58 != guess && answer59 != guess);
+            ListControlOptions();
 
         }
         public static void Reverse()
         {
+            Console.Clear();
+            Console.WriteLine("\n Yes, this looks like the previous one, but it is different." +
+            "\n**NOTE** If you don't know your 'FOREACH loop' " +
+            "\nyou will need to know it before using this tool." +
+            "\n\n**SPECIAL NOTE **What we do here can be used with Sort as well (I just didn't figure it out until now)." +
+            "\n\nExamine this List: \n\nList<int> myNumbers = new List<int>(){ 29, 54, 12, 100, 2, 55, 99 };\n\n" +
+            "How do we REVERSE this list from the last thing listed to the first thing?" +
+            "\nWe use the 'REVERSE' property." +
+            "\nThis is another one we can call on the console but is a bit less involved. \n\n Press Enter to continue...");
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("" +
+            "\n1. We call on the List Name and the REVERSE property:\n\t\t myNumbers.Reverse" +
+            "\n2. We need a 'foreach loop' but change the word 'collection' to the name of the list\n\n foreach (var item in myNumbers)" +
+            "\n3. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(item);" +
+            "\n\nAll together it looks like this: " +
+            "\n__________________________________________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nnumbers.Reverse();" +
+            "\nforeach (var item in collection)" +
+            "\n{" +
+                "\nConsole.WriteLine(item);" +
+            "\n}");
+
+            var guess = "";
+            var answer60 = "userAge.Reverse();";
+            var answer61 = "foreach (var item in userAge)";
+            var answer62 = "{";
+            var answer63 = "Console.WriteLine(item);";
+            var answer64 = "}";
+
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nReverse the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> userAge = new List<int>(){ 100, 200, 300, 400, 500 }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer60)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer61)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer62)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer63)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer64)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n500\n400\n300\n200\n100");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer60 != guess && answer61 != guess && answer62 != guess && answer63 != guess && answer64 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nnumbers.Reverse();" +
+            "\nforeach (var item in numbers)" +
+            "\n{" +
+                "\nConsole.WriteLine(item);" +
+            "\n}");
+            var answer65 = "myLyrics.Reverse();";
+            var answer66 = "foreach (var item in myLyrics)";
+            var answer67 = "{";
+            var answer68 = "Console.WriteLine(item);";
+            var answer69 = "}";
+
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nReverse the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<string> myLyrics = new List<string>(){ \"Do\", \"Ti\", \"La\", \"So\", \"Fa\", \"Me\", \"Re\", \"Do\"};" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer65)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer66)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer67)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer68)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer69)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \nDo\nRe\nMe\nFa\nSo\nLa\nTi\nDo");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer65 != guess && answer66 != guess && answer67 != guess && answer68 != guess && answer69 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nnumbers.Reverse();" +
+            "\nforeach (var item in numbers)" +
+            "\n{" +
+                "\nConsole.WriteLine(item);" +
+            "\n}");
+            var answer70 = "myTruth.Reverse();";
+            var answer71 = "foreach (var item in myTruth)";
+            var answer72 = "{";
+            var answer73 = "Console.WriteLine(item);";
+            var answer74 = "}";
+
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nReverse the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<bool> myTruth = new List<bool>(){ true, true, true, false, false, false };" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer70)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer71)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer72)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer73)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer74)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \nfalse\nfalse\nfalse\ntrue\ntrue\ntrue");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer70 != guess && answer71 != guess && answer72 != guess && answer73 != guess && answer74 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________No____Example____To____Test____You___________________________");
+
+            var answer75 = "myDouble.Reverse();";
+            var answer76 = "foreach (var item in myDouble)";
+            var answer77 = "{";
+            var answer78 = "Console.WriteLine(item);";
+            var answer79 = "}";
+
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nReverse the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<double> myDouble = new List<double>(){ 0.4, 0.03, 0.002, 0.0001 };" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer75)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer76)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer77)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer78)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer79)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n0.0001\n0.002\n0.03\n0.4");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer75 != guess && answer76 != guess && answer77 != guess && answer78 != guess && answer79 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________Someday you will be all alone...to reverse a list all by yourself___________________________");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n_____________________________________________That day is today.______________________________________________________");
+
+            var answer80 = "myLetters.Reverse();";
+            var answer81 = "foreach (var item in myLetters)";
+            var answer82 = "{";
+            var answer83 = "Console.WriteLine(item);";
+            var answer84 = "}";
+
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nReverse the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<string> myLetters = new List<string>(){ \"k\", \"j\", \"i\", \"h\", \"g\", \"f\", \"e\", \"d\", \"c\", \"b\", \"a\", };" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer80)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer81)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer82)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer83)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer84)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \na\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer80 != guess && answer81 != guess && answer82 != guess && answer83 != guess && answer84 != guess);
+
+
+            ListControlOptions();
 
         }
         public static void Contains()
         {
 
-        }
-        public static void IndexOf()
-        {
+            Console.Clear();
+            Console.WriteLine("\nThis little function is like a breath of fresh air." +
+            "\nThis function is checking wheather an item is present in the list or not." +
+            "\nIt will return True or False. Below is how this is accomplished." +
+            "\n1. We call on the Console" +
+            "\n\t\tConsole.WriteLine();" +
+            "\n2. Next in the parenthesis we call on our particular list name\n\t\tConsole.WriteLine(userAge);" +
+            "\n3. Then after the list name we call on the command Contains\n\t\tConsole.WriteLine(userAge.Contains);" +
+            "\n4. Finally we write in a NEW SET OF PARENTHESIS what we are looking for\n\t\tConsole.WriteLine(userAge.Contains(26));" +
+            "\n5. The console will then print True is the item is found or False if it is not found " +
+            "\n\nAll together it looks like this: " +
+            "\n__________________________________________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.Contains(29));" +
+            "\nTrue");
 
-        }
-
-        public static void ListEdit()
-        {
             var guess = "";
-            var answer35 = "List<int> userAges = new List<int>(){ 21, 45, 63, 78, 100 };";
+            var answer65 = "Console.WriteLine(userAge.Contains(200));";
             do
             {
-                Console.WriteLine("\n\nWrite an explicitely typed List named userAges with these five integers:{ 21, 45, 63, 78, 100 };");
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the number 200?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> userAge = new List<int>(){ 100, 200, 300, 400, 500 }; " +
+                    "\n\nWhat do you write?");
                 guess = Console.ReadLine();
-                if (guess == answer35)
+                if (guess == answer65)
                 {
-                    Compliment();
-                    Console.WriteLine($"\n{Compliment()}\n5 of 5");
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: True");
                     Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
                 }
                 else
                 {
-                    Console.WriteLine("************************************************OPPS**************************************");
-                    Console.WriteLine("Try again! The answer is List<int> userAges = new List<int>(){ 21, 45, 63, 78, 100 };");
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
                 }
 
-            } while (answer35 != guess);
+            } while (answer65 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.Contains(29))" +
+            "\nTrue");
+
+            var answer66 = "Console.WriteLine(myLyrics.Contains(\"Bo\"));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the string Bo?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<string> myLyrics = new List<string>(){ \"Do\", \"Ti\", \"La\", \"So\", \"Fa\", \"Me\", \"Re\", \"Do\"};" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer66)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: False");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer66 != guess);
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.Contains(29))" +
+            "\nTrue");
+
+            var answer67 = "Console.WriteLine(pets.Contains(\"Spot\"));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the string Spot?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nvar pets = new List<string>(){ \"Spot\", \"Hammy\", \"Whiskers\" }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer67)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: True");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer67 != guess);
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n__________Yep, this is what it will be like.____It's ok,  you can ask Sally for help again for the millinth time today._______________");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n_________________________________________________You could Google it.___________________________________________");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n__________________________________Or you can be the MASTER that I know is in you!___________________________________");
+
+
+            var answer68 = "Console.WriteLine(crazyList.Contains(22.213));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the double 22.213?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                "\nList<double> crazyList = new List<double>() { 2.2, 20.2, 22.2, 22.22, 222.22, 222.2, 0.2, 0.22, 0.222, 21.21, 11.22, 211.12, 111.222, 2.3, 30.3, 33.3, 22.213, 33.33, 333.33, 333.3, 0.3, 0.33, 0.333, 0.3313, 31.31, 11.33, 311.13, 111.333, 4.4, 40.4, 44.4, 44.44, 444.44, 444.4, 0.4, 0.44, 0.444, 41.41, 11.44, 411.14, 111.444, 4.3, 30.3, 33.3, 44.413, 33.33, 333.33, 333.3, 0.3, 0.33, 0.333, 0.3313, 31.31, 11.33, 311.13, 111.333 "+
+                "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer68)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: True");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer68 != guess);
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n____________________________________________________________________");
+
+
+            var answer69 = "Console.WriteLine(easyOut.Contains(55));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the int 55?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+                    "\nList<int> easyOut = new List<int>(){ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }"+
+                "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer69)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: False");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer69 != guess);
+
+            ListControlOptions();
+        }
+        public static void IndexOf()
+        {
+            Console.Clear();
+            Console.WriteLine("\nThis little function is like the CONTAINS." +
+            "\nExcept this function is finding the INDEX location of a particular item." +
+            "\nRemember how the INDEX begins with 0 and NOT 1." +
+            "\nIt will return the index location number to the console. Below is how this is accomplished." +
+            "\n1. We call on the Console" +
+            "\n\t\tConsole.WriteLine();" +
+            "\n2. Next in the parenthesis we call on our particular list name\n\t\tConsole.WriteLine(userAge);" +
+            "\n3. Then after the list name we call on the command IndexOf\n\t\tConsole.WriteLine(userAge.IndexOf);" +
+            "\n4. Finally we write in a NEW SET OF PARENTHESIS what we are looking for\n\t\tConsole.WriteLine(userAge.Contains(26));" +
+            "\n5. The console will then print index number of the item looked for." +
+            "\n\nPress Enter to continue... ");
+             Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("All together it looks like this: " +
+            "\n__________________________________________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.IndexOf(29));" +
+            "\nConsole prints: 0 (Because 29 is in the 0 position.)");
+          
+
+            var guess = "";
+            var answer65 = "Console.WriteLine(userAge.IndexOf(200));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nWhat is the index number of 200?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> userAge = new List<int>(){ 100, 200, 300, 400, 500 }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer65)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: 1");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer65 != guess);
 
 
 
 
-            Console.WriteLine("Congragulations completing the 'List'  practice. Would you like to practice something else?");
-
-            MainMenu();
 
 
+
+
+
+
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.IndexOf(29))" +
+            "\0");
+
+            var answer66 = "Console.WriteLine(myLyrics.IndexOf(\"Me\"));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nDoes this collection include the string Bo?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<string> myLyrics = new List<string>(){ \"Do\", \"Ti\", \"La\", \"So\", \"Fa\", \"Me\", \"Re\", \"Do\"};" +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer66)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: 5");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer66 != guess);
+
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n________________________EXAMPLE___TO___HELP___YOU_________________________________________" +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nConsole.WriteLine(numbers.IndexOf(12))" +
+            "\n2");
+
+            var answer67 = "Console.WriteLine(pets.IndexOf(\"Whiskers\"));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nWhat is the index number of Whiskers?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nvar pets = new List<string>(){ \"Spot\", \"Hammy\", \"Whiskers\" }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer67)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: 2");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer67 != guess);
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n_______________________________________No Example_______________________________________________");
+
+
+
+            var answer68 = "Console.WriteLine(crazyList.IndexOf(22.213));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nWhere is the index location of the double 22.213?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                "\nList<double> crazyList = new List<double>() { 2.2, 20.2, 22.2, 22.22, 222.22, 222.2, 0.2, 0.22, 0.222, 21.21, 11.22, 211.12, 111.222, 2.3, 30.3, 33.3, 22.213, 33.33, 333.33, 333.3, 0.3, 0.33, 0.333, 0.3313, 31.31, 11.33, 311.13, 111.333, 4.4, 40.4, 44.4, 44.44, 444.44, 444.4, 0.4, 0.44, 0.444, 41.41, 11.44, 411.14, 111.444, 4.3, 30.3, 33.3, 44.413, 33.33, 333.33, 333.3, 0.3, 0.33, 0.333, 0.3313, 31.31, 11.33, 311.13, 111.333 " +
+                "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer68)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: 44");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer68 != guess);
+
+
+
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n____________________________________________________________________");
+
+
+            var answer69 = "Console.WriteLine(easyOut.IndexOf(8));";
+            do
+            {
+                Console.WriteLine("\n__________________________________________________________________________" +
+                    "\nNow you try...\nWhat is the index location of int 8?." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+                    "\nList<int> easyOut = new List<int>(){ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }" +
+                "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer69)
+                {
+                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: 7");
+                    Console.WriteLine($"_________________________________________________________________________________________");
+                    Console.WriteLine("\n\n Press Enter to continue...");
+                }
+                else
+                {
+
+                    Console.WriteLine($"\n{Wrong()}\n");
+
+                }
+
+            } while (answer69 != guess);
+
+
+
+            ListControlOptions();
+
+        }
+     /// <summary>
+     /// ///////////////////////////////////////////////////////////////////////////////////////////
+     /// </summary>
+        public static void Add()
+        {
+            Console.Clear();
+            Console.WriteLine("\n**NOTE** If you don't know your 'FOR loop' and the Count property above, \nyou will need to know them before using this tool." +
+            "\n\nExamine this List: \n\nList<int> numbers = new List<int>(){ 1, 2, 3, 4, 5, 6, 7, 8, 9 };\n\n" +
+            "How do we ADD to this list?" +
+            "\nWe use the 'Add' property. This will add an item to the END of our List." +
+            "\nIn this one, you don't need to call on the console, but you won't be able to see your work unless you do.\n\n Press Enter to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("" +
+            "\n1. We call on the List Name, and the Add property, and include what we want to add in the parameters(parenthesis).\n\t\t myNumbers.Add(10);" +
+            "\n2. We need a 'for loop' " +
+            "\n3. Then we use the 'Count' property in the 'conditional' so that all of the numbers on the List are examined:\n\t\ti < numbers.Count;" +
+            "\n4. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(numbers[i]);" +
+            "\n__________________________________________________________________________" +
+            "\n\nAll together it looks like this: " +
+            "\n\nList<int> numbers = new List<int>() { 29, 54, 12, 100, 2, 55, 99 };" +
+            "\nnumbers.Add(10);" +
+            "\nfor (int i = 0; i < numbers.Count; i++)" +
+            "\n{" +
+                "\nConsole.WriteLine(numbers[i]);" +
+            "\n}" +
+            "The console will print now the numbers 1 through 10.");
+
+            var guess = "";
+            var answer35 = "myLevel.Add(1);";
+            var answer36 = "for (int i = 0; i < myLevel.Count; i++)";
+            var answer37 = "{";
+            var answer38 = "Console.WriteLine(myLevel[i]);";
+            var answer39 = "}";
+
+            do
+            {
+                Console.WriteLine("Now you try...\n\nAdd the number 1 to the end of this list." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> myLevel = new List<int>(){ 10, 9, 8, 7, 6, 5, 4, 3, 2 }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer35)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer36)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer37)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer38)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer39)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n10\n9\n8\n7\n6\n5\n4\n3\n2\n1 <--this is new");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer35 != guess && answer36 != guess && answer37 != guess && answer38 != guess && answer39 != guess);
+
+
+
+            ListControlOptions();
+        }
+      
+        public static void Insert()
+        {
+            Console.Clear();
+            Console.WriteLine("\n**NOTE** If you don't know your 'FOR loop' and the Count property above, \nyou will need to know them before using this tool." +
+            "\n\nExamine this List: \n\nList<int> numbers = new List<int>(){ 1, 2, 3, 4, 6, 7, 8, 9, 10 };\n\n" +
+            "How do we INSERT A NUMBER into this list?" +
+            "\nWe use the 'Insert' property. This will add an item wherever you want to put it in the list." +
+            "\nIn this one, you don't need to call on the console, but you won't be able to see your work unless you do.\n\n Press Enter to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("" +
+            "\n1. We call on the List Name, the Insert property, and include THREE things parameters(parenthesis)." +
+            "\n\t\ta) The index number WHERE we want our item to go. "+
+            "\n\t\tb) a comma ',' " +
+            "\n\t\tc) The item we want to insert. " +
+            "\nIt Looks like this:"+
+            "\n\t\t myNumbers.Add(4, 5);" +
+            "\n2. We need a 'for loop' " +
+            "\n3. Then we use the 'Insert' property in the 'conditional' so that all of the numbers on the List are examined:\n\t\ti < numbers.Count;" +
+            "\n4. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(numbers[i]);" +
+            "\n__________________________________________________________________________" +
+            "\n\nAll together it looks like this: " +
+            "\n\nList<int> numbers = new List<int>() { 1, 2, 3, 4, 6, 7, 8, 9, 10};" +
+            "\nnumbers.Insert(4, 5);" +
+            "\nfor (int i = 0; i < numbers.Count; i++)" +
+            "\n{" +
+                "\nConsole.WriteLine(numbers[i]);" +
+            "\n}" +
+            "The console will print now the numbers 1 through 10.");
+
+            var guess = "";
+            var answer35 = "myLevel.Insert(5, 5);";
+            var answer36 = "for (int i = 0; i < myLevel.Count; i++)";
+            var answer37 = "{";
+            var answer38 = "Console.WriteLine(myLevel[i]);";
+            var answer39 = "}";
+
+            do
+            {
+                Console.WriteLine("Now you try...\n\nSort the indexes in this collection." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> myLevel = new List<int>(){ 10, 9, 8, 7, 6, 4, 3, 2, 1 }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer35)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer36)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer37)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer38)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer39)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n10\n9\n8\n7\n6\n5 <--this is new\n4\n3\n2\n1");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer35 != guess && answer36 != guess && answer37 != guess && answer38 != guess && answer39 != guess);
+            ListControlOptions();
         }
 
 
+        public static void Remove()
+        {
+            Console.Clear();
+            Console.WriteLine("\n**NOTE** If you don't know your 'FOREACH loop', \nyou will need to know it before using this tool." +
+            "\n\nExamine this List: \n\nList<int> numbers = new List<int>(){ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };\n\n" +
+            "How do we REMOVE from this list?" +
+            "\nWe use the 'Remove' property. This will delete the first occurence of the item from the list." +
+            "\nIn this one, you don't need to call on the console, but you won't be able to see your work unless you do.\n\n Press Enter to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("" +
+            "\n1. We call on the List Name, and the Remove property, and include what we want to remove in the parameters(parenthesis).\n\t\t myNumbers.Remove(4);" +
+            "\n2. We need a 'foreach loop' " +
+            "\n3. Then we use the 'Count' property in the 'conditional' so that all of the numbers on the List are examined:\n\t\ti < numbers.Count;" +
+            "\n4. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(item);" +
+
+            "\n__________________________________________________________________________" +
+            "\n\nAll together it looks like this: " +
+            "\n\nList<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };" +
+            "\nnumbers.Remove(4);" +
+            "\nforeach (var item in numbers)" +
+            "\n{" +
+                "\nConsole.WriteLine(item);" +
+            "\n}" +
+            "The console will print now the numbers 1, 2, 3, 5, 6, 7, 8, 9, 10");
+
+            var guess = "";
+            var answer35 = "myLevel.Remove(4);";
+            var answer36 = "foreach (var item in myLevel)";
+            var answer37 = "{";
+            var answer38 = "Console.WriteLine(item);";
+            var answer39 = "}";
+
+            do
+            {
+                Console.WriteLine("Now you try...\n\nRemove the number 4 from this list." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> myLevel = new List<int>(){ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer35)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer36)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer37)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer38)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer39)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n10\n9\n8\n7\n6\n5\n3\n2\n1");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer35 != guess && answer36 != guess && answer37 != guess && answer38 != guess && answer39 != guess);
+
+            ListControlOptions();
+        }
+
+       
+        public static void RemoveAt()
+        {
+
+            Console.Clear();
+            Console.WriteLine("\n**NOTE** If you don't know your 'FOREACH loop', \nyou will need to know it before using this tool." +
+            "\n\nExamine this List: \n\nList<int> numbers = new List<int>(){ 1, 2, 3, 4, 6, 7, 8, 9, 10 };\n\n" +
+            "How do we REMOVE from a specific location on this list?" +
+            "\nWe use the 'RemoveAt' property. This will Remove an item from a specific place on the list." +
+            "\nIn this one, you don't need to call on the console, but you won't be able to see your work unless you do.\n\n Press Enter to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("" +
+            "\n1. We call on the List Name, the RemoveAt property." +
+            "\nIt Looks like this:" +
+            "\n\t\tnumbers.RemoveAt(4);" +
+            "\n2. We need a 'foreach loop' " +
+
+
+            "\n3. Change the word 'collection' to whatever the name of your string is:\n\t\tforeach (var item in numbers);" +
+            "\n4. In the Scope {}, we call on the console to display the list and the collection in order:\n\t\t Console.WriteLine(item);" +
+
+            "\n__________________________________________________________________________" +
+            "\n\nAll together it looks like this: " +
+            "\n\nList<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };" +
+            "\nnumbers.RemoveAt(4);" +
+            "\nforeach (var item in numbers)" +
+            "\n{" +
+                "\nConsole.WriteLine(item);" +
+            "\n}" +
+            "The console will print now the numbers 1, 2, 3, 4, 6, 7, 8, 9, 10");
+
+            var guess = "";
+            var answer35 = "myLevel.RemoveAt(4);";
+            var answer36 = "foreach (var item in myLevel)";
+            var answer37 = "{";
+            var answer38 = "Console.WriteLine(item);";
+            var answer39 = "}";
+
+            do
+            {
+                Console.WriteLine("Now you try...\n\nRemove whatever indexes at number 4." +
+                    "\n__________________________________________________________________________" +
+                    "\n__________________________________________________________________________" +
+
+                    "\n\nList<int> myLevel = new List<int>(){ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 }; " +
+                    "\n\nWhat do you write?");
+                guess = Console.ReadLine();
+                if (guess == answer35)
+                {
+                    guess = Console.ReadLine();
+                    if (guess == answer36)
+                    {
+                        guess = Console.ReadLine();
+                        if (guess == answer37)
+                        {
+                            guess = Console.ReadLine();
+                            if (guess == answer38)
+                            {
+                                guess = Console.ReadLine();
+                                if (guess == answer39)
+                                {
+                                    //guess = Console.ReadLine();
+                                    Console.WriteLine($"\n{Compliment()}\nThe Console would read: \n10\n9\n8\n7\n5\n4\n3\n2\n1");
+                                    Console.WriteLine($"_________________________________________________________________________________________");
+                                    Console.WriteLine("\n\n Press Enter to continue...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"\n{Wrong()}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\n{Wrong()}\n");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"\n{Wrong()}\n");
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n{Wrong()}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\n{Wrong()}\n");
+                }
+
+            } while (answer35 != guess && answer36 != guess && answer37 != guess && answer38 != guess && answer39 != guess);
+
+            ListControlOptions();
+        }
+
+      
         public static void arrayPractice()
         {
             ///////////////"ARRAY - ANSWERS FOR BEGINNERS///////////////////////
